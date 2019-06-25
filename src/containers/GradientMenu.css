@@ -10,4 +10,6 @@ p.gradientMenu__title {
   width: 40rem;
   background-color: rgba(0, 0, 0, .40);
   border-radius: 5px;
+  padding: 1.5rem 2rem;
+  box-sizing: border-box;
 }
