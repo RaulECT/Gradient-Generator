@@ -1,0 +1,13 @@
+p.gradientMenu__title {
+  margin: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, .90);
+  font-size: 2rem;
+}
+
+.gradientMenu__panel {
+  margin: auto;
+  width: 40rem;
+  background-color: rgba(0, 0, 0, .40);
+  border-radius: 5px;
+}

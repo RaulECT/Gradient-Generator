@@ -1,8 +1,9 @@
 import React from 'react'
 
-export default function GradientView( { children, width, height, colors, type } ) {
+export default function GradientView( { children, width, height, colors, type, className } ) {
   const viewStyle = {}
   const _colors = colors || [ '#90E196', '#5773F2' ]
+  const viewClass = className || ''
 
   viewStyle.width = width
   viewStyle.height = height
@@ -17,7 +18,10 @@ export default function GradientView( { children, width, height, colors, type } 
   }
 
   return (
-    <div style={ viewStyle }>
+    <div 
+      style={ viewStyle }
+      className={viewClass}
+    >
       { children ? children : null }
     </div>
   )
