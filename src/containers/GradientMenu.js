@@ -4,6 +4,7 @@ import './GradientMenu.css'
 import MenuOption from '../components/MenuOption'
 import ColorItem from '../components/ColorItem'
 import GradientView from '../components/GradientView'
+import GradientCode from '../components/GradientCode'
 
 export default function GradientMenu() {
   
@@ -50,6 +51,10 @@ export default function GradientMenu() {
             className='gradientMenu__preview'
             type='circular'
           />
+        </MenuOption>
+
+        <MenuOption label='Code'>
+          <GradientCode />
         </MenuOption>
       </div>
     </div>
