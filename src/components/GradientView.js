@@ -12,6 +12,8 @@ export default function GradientView( { children, width, height, colors, type, c
   function generateGradientByType( type, colors ) {
     switch ( type ) {
       case 'diagonal': return `linear-gradient(to bottom right, ${colors[0]}, ${colors[1]})`
+      case 'vertical': return `linear-gradient(to right, ${colors[0]}, ${colors[1]})`
+      case 'circular': return `radial-gradient(circle at top, ${colors[0]}, ${colors[1]})`
     
       default: return `linear-gradient(${colors[0]}, ${colors[1]})`
     }

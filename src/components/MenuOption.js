@@ -6,7 +6,7 @@ export default function MenuOption( { children, label, flex } ) {
   const viewStyle = flex ? { display: 'flex' } : {}
 
   return (
-    <div>
+    <div className='menu-option'>
       <p className="menu-option__label">{label}:</p>
 
       <div style={ viewStyle }>

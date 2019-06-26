@@ -1,3 +1,7 @@
+.menu-option:not( :last-child ) {
+  margin-bottom: 2rem;
+}
+
 p.menu-option__label {
   margin: 0;
   margin-bottom: 0.8rem;

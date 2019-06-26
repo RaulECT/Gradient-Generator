@@ -13,3 +13,12 @@ p.gradientMenu__title {
   padding: 1.5rem 2rem;
   box-sizing: border-box;
 }
+
+.gradientMenu__preview {
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.gradientMenu__preview:not( :last-child ) {
+  margin-right: 1rem;
+}
