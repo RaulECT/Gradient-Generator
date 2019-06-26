@@ -2,13 +2,14 @@ import React from 'react'
 
 import './MenuOptions.css'
 
-export default function MenuOption( { children, label } ) {
-  
+export default function MenuOption( { children, label, flex } ) {
+  const viewStyle = flex ? { display: 'flex' } : {}
+
   return (
     <div>
       <p className="menu-option__label">{label}:</p>
 
-      <div>
+      <div style={ viewStyle }>
         { children ? children : null }
       </div>
     </div>
