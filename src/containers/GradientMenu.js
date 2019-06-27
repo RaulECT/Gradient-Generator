@@ -2,12 +2,12 @@ import React from 'react'
 
 import './GradientMenu.css'
 import MenuOption from '../components/MenuOption'
-import ColorItem from '../components/ColorItem'
 import GradientView from '../components/GradientView'
 import GradientCode from '../components/GradientCode'
 import AddColorButton from '../components/AddColorButton'
+import CurrentColorsList from '../components/CurrentColorsList'
 
-export default function GradientMenu() {
+export default function GradientMenu( { currentColors, onChangeColors } ) {
   
   return (
     <div className="gradientMenu__panel">
@@ -18,8 +18,7 @@ export default function GradientMenu() {
           label="Colors" 
           flex
         >
-          <ColorItem color="90E196" />
-          <ColorItem color="5773F2" />
+          <CurrentColorsList colors={ currentColors } />
           <AddColorButton />
         </MenuOption>
         
