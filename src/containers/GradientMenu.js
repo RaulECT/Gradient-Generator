@@ -2,13 +2,14 @@ import React from 'react'
 
 import './GradientMenu.css'
 import MenuOption from '../components/MenuOption'
-import GradientView from '../components/GradientView'
 import GradientCode from '../components/GradientCode'
 import AddColorButton from '../components/AddColorButton'
 import CurrentColorsList from '../components/CurrentColorsList'
+import GradientsTypeList from '../components/GradientsTypeList'
 
-export default function GradientMenu( { currentColors, onChangeColors } ) {
-  
+export default function GradientMenu( { currentColors, onChangeColors, onChangeGradientType, gradientsType } ) {
+  const _gradientsType = gradientsType || []
+
   return (
     <div className="gradientMenu__panel">
       <p className="gradientMenu__title">Gradient Generator</p>
@@ -26,31 +27,9 @@ export default function GradientMenu( { currentColors, onChangeColors } ) {
           label="Patterns" 
           flex
         >
-          <GradientView 
-            width='8rem'
-            height='8rem'
-            type='diagonal'
-            className='gradientMenu__preview'
-          />
-          
-          <GradientView 
-            width='8rem'
-            height='8rem'
-            className='gradientMenu__preview'
-          />
-          
-          <GradientView 
-            width='8rem'
-            height='8rem'
-            className='gradientMenu__preview'
-            type='vertical'
-          />
-          
-          <GradientView 
-            width='8rem'
-            height='8rem'
-            className='gradientMenu__preview'
-            type='circular'
+          <GradientsTypeList 
+            types={_gradientsType}
+            onClick={ onChangeGradientType }
           />
         </MenuOption>
 

@@ -7,18 +7,22 @@ import './App.css'
 export default function App() {
 
   const [ currentColors, changeColors ] = useState( [ '90E196', '5773F2' ] )
+  const [ gradientType, changeGradientType ] = useState( 'diagonal' )
+  const gradientTypes = [ 'diagonal', 'horizontal', 'vertical', 'circular' ]
 
   return (
     <GradientView
       width='100vw'
       height='100vh'
-      type='diagonal'
+      type={ gradientType }
       className='gradientView'
       colors={currentColors}
     >
       <GradientMenu
         currentColors={ currentColors }
         onChangeColors={ changeColors }
+        onChangeGradientType={ changeGradientType }
+        gradientsType={gradientTypes}
       />
     </GradientView>
   )
