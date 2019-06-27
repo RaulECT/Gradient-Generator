@@ -5,6 +5,7 @@ import MenuOption from '../components/MenuOption'
 import ColorItem from '../components/ColorItem'
 import GradientView from '../components/GradientView'
 import GradientCode from '../components/GradientCode'
+import AddColorButton from '../components/AddColorButton'
 
 export default function GradientMenu() {
   
@@ -19,6 +20,7 @@ export default function GradientMenu() {
         >
           <ColorItem color="90E196" />
           <ColorItem color="5773F2" />
+          <AddColorButton />
         </MenuOption>
         
         <MenuOption 
