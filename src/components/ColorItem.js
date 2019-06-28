@@ -3,7 +3,7 @@ import React from 'react'
 import './ColorItem.css'
 
 export default function ColorItem( { color } ) {
-  const previewStyle = { backgroundColor: `#${color}` }
+  const previewStyle = { backgroundColor: `${color}` }
 
   return (
     <div className="color-item">

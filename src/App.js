@@ -6,7 +6,7 @@ import './App.css'
 
 export default function App() {
 
-  const [ currentColors, changeColors ] = useState( [ '90E196', '5773F2' ] )
+  const [ currentColors, changeColors ] = useState( [ '#90E196', '#5773F2' ] )
   const [ gradientType, changeGradientType ] = useState( 'diagonal' )
   const [ gradientCode, changeGradientCode ] = useState( 'linear-gradient(#e66465, #9198e5)' )
   const gradientTypes = [ 'diagonal', 'horizontal', 'vertical', 'circular' ]

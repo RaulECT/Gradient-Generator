@@ -16,6 +16,11 @@ export default function GradientMenu( { currentColors, onChangeColors, onChangeG
     onChangeGradientType( type )
   }
 
+  function AddColor(color) {
+    console.log(color)
+    onChangeColors( currentColors.concat( [ color.hex ] ) )
+  }
+
   return (
     <div className="gradientMenu__panel">
       <p className="gradientMenu__title">Gradient Generator</p>
@@ -28,7 +33,10 @@ export default function GradientMenu( { currentColors, onChangeColors, onChangeG
           <CurrentColorsList colors={ currentColors } />
           <AddColorButton />
 
-          <ColorPicker add />
+          <ColorPicker 
+            onAddNewColor={ AddColor }
+            add 
+          />
         </MenuOption>
 
         <MenuOption 
@@ -38,6 +46,7 @@ export default function GradientMenu( { currentColors, onChangeColors, onChangeG
           <GradientsTypeList 
             types={_gradientsType}
             onClick={ changeGradient }
+            colors={ currentColors }
           />
         </MenuOption>
 

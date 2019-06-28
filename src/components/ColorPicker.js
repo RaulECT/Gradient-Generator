@@ -12,10 +12,7 @@ export default function ColorPicker( { add, onChangeColor, onAddNewColor } ) {
 
   function handelOnChangeColor( newColor ) { colorSelected = newColor }
 
-  function handleOnAddNewColor() {
-    console.log( colorSelected )
-    _onAddNewColor( colorSelected )
-  }
+  function handleOnAddNewColor() { _onAddNewColor( colorSelected ) }
 
   return (
     <div className='color-picker'>

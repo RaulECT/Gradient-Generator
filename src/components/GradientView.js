@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function GradientView( { children, width, height, colors, type, className, onClick } ) {
   const viewStyle = {}
-  const _colors = colors || [ '90E196', '5773F2' ]
+  const _colors = colors || [ '#90E196', '#5773F2' ]
   const viewClass = className || ''
   const _onClick = onClick ? onClick : () => {}
   const gradientCode = generateGradientByType( type, _colors )
@@ -12,8 +12,7 @@ export default function GradientView( { children, width, height, colors, type, c
   viewStyle.backgroundImage = gradientCode
 
   function generateGradientByType( type, colors ) {
-    const hexColors = colors.map( color => `#${color}` )
-    const colorsString = hexColors.join( ', ' )
+    const colorsString = colors.join( ', ' )
 
     switch ( type ) {
       case 'diagonal': return `linear-gradient(to bottom right, ${colorsString})`
