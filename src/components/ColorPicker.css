@@ -1,0 +1,13 @@
+.color-picker {
+  display: flex;
+  flex-direction: column;
+}
+
+.color-picker__add-button {
+  border: none;
+  color: rgba(255,255,255,.90);
+  background-color: rgba(0,0,0,.50);
+  padding: 0.5rem 0.3rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}

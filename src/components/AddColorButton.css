@@ -3,9 +3,11 @@
   background-color: rgba(0,0,0, .50);
   border-radius: 5px;
   display: flex;
+  height: 4.6rem;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-right: 0.5rem;
 }
 
 .add-color-button__icon {

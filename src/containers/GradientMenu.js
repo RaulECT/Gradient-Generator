@@ -6,6 +6,7 @@ import GradientCode from '../components/GradientCode'
 import AddColorButton from '../components/AddColorButton'
 import CurrentColorsList from '../components/CurrentColorsList'
 import GradientsTypeList from '../components/GradientsTypeList'
+import ColorPicker from '../components/ColorPicker'
 
 export default function GradientMenu( { currentColors, onChangeColors, onChangeGradientType, gradientsType, gradientCode, onChangeGradientCode } ) {
   const _gradientsType = gradientsType || []
@@ -26,8 +27,10 @@ export default function GradientMenu( { currentColors, onChangeColors, onChangeG
         >
           <CurrentColorsList colors={ currentColors } />
           <AddColorButton />
+
+          <ColorPicker add />
         </MenuOption>
-        
+
         <MenuOption 
           label="Patterns" 
           flex
