@@ -7,8 +7,13 @@ import AddColorButton from '../components/AddColorButton'
 import CurrentColorsList from '../components/CurrentColorsList'
 import GradientsTypeList from '../components/GradientsTypeList'
 
-export default function GradientMenu( { currentColors, onChangeColors, onChangeGradientType, gradientsType } ) {
+export default function GradientMenu( { currentColors, onChangeColors, onChangeGradientType, gradientsType, gradientCode, onChangeGradientCode } ) {
   const _gradientsType = gradientsType || []
+
+  function changeGradient( type, code ) {
+    onChangeGradientCode( code )
+    onChangeGradientType( type )
+  }
 
   return (
     <div className="gradientMenu__panel">
@@ -29,12 +34,12 @@ export default function GradientMenu( { currentColors, onChangeColors, onChangeG
         >
           <GradientsTypeList 
             types={_gradientsType}
-            onClick={ onChangeGradientType }
+            onClick={ changeGradient }
           />
         </MenuOption>
 
         <MenuOption label='Code'>
-          <GradientCode />
+          <GradientCode code={ gradientCode } />
         </MenuOption>
       </div>
     </div>

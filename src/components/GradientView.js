@@ -5,19 +5,23 @@ export default function GradientView( { children, width, height, colors, type, c
   const _colors = colors || [ '90E196', '5773F2' ]
   const viewClass = className || ''
   const _onClick = onClick ? onClick : () => {}
+  const gradientCode = generateGradientByType( type, _colors )
   
   viewStyle.width = width
   viewStyle.height = height
-  viewStyle.backgroundImage = generateGradientByType( type, _colors )
+  viewStyle.backgroundImage = gradientCode
 
   function generateGradientByType( type, colors ) {
+    const hexColors = colors.map( color => `#${color}` )
+    const colorsString = hexColors.join( ', ' )
+
     switch ( type ) {
-      case 'diagonal': return `linear-gradient(to bottom right, #${colors[0]}, #${colors[1]})`
-      case 'vertical': return `linear-gradient(to right, #${colors[0]}, #${colors[1]})`
-      case 'circular': return `radial-gradient(circle at top, #${colors[0]}, #${colors[1]})`
-      case 'horizontal': return `linear-gradient(#${colors[0]}, #${colors[1]})`
+      case 'diagonal': return `linear-gradient(to bottom right, ${colorsString})`
+      case 'vertical': return `linear-gradient(to right, ${colorsString})`
+      case 'circular': return `radial-gradient(circle at top, ${colorsString})`
+      case 'horizontal': return `linear-gradient(${colorsString})`
     
-      default: return `linear-gradient(#${colors[0]}, #${colors[1]})`
+      default: return `linear-gradient(${colorsString})`
     }
   }
 
@@ -25,7 +29,7 @@ export default function GradientView( { children, width, height, colors, type, c
     <div 
       style={ viewStyle }
       className={viewClass}
-      onClick={ _onClick }
+      onClick={ () => { _onClick( type, gradientCode ) } }
     >
       { children ? children : null }
     </div>

@@ -17,8 +17,92 @@ p.gradientMenu__title {
 .gradientMenu__preview {
   border-radius: 5px;
   box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+}
+
+.gradientMenu__preview:before,
+.gradientMenu__preview:after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  width: 0;
+  height: 0;
+  background: transparent;
+  border: 3px solid transparent;
+  border-radius: 6px;
+}
+
+.gradientMenu__preview:hover:before {
+  animation: borderAnimation-before 0.15s linear forwards;
+}
+
+.gradientMenu__preview:hover:after {
+  animation: borderAnimation-after 0.15s linear forwards;
+  animation-delay: 0.15s;
 }
 
 .gradientMenu__preview:not( :last-child ) {
   margin-right: 1rem;
+}
+
+@keyframes borderAnimation-before {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: rgba(255, 255, 255, .90);
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+  }
+
+  50% {
+    width: 97%;
+    height: 0;
+    border-top-color: rgba(255, 255, 255, .90);
+    border-bottom-color: transparent;
+    border-right-color: rgba(255, 255, 255, .90);
+    border-left-color: transparent;
+  }
+
+  100% {
+    width: 97%;
+    height: 97%;
+    border-top-color: rgba(255, 255, 255, .90);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: rgba(255, 255, 255, .90);
+  }
+}
+
+@keyframes borderAnimation-after {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-left-color: rgba(255, 255, 255, .90);
+  }
+
+  50% {
+    width: 0;
+    height: 97%;
+    border-top-color: transparent;
+    border-bottom-color: rgba(255, 255, 255, .90);
+    border-right-color: transparent;
+    border-left-color: rgba(255, 255, 255, .90);
+  }
+
+  100% {
+    width: 97%;
+    height: 97%;
+    border-top-color: transparent;
+    border-bottom-color: rgba(255, 255, 255, .90);
+    border-left-color: rgba(255, 255, 255, .90);
+    border-right-color: transparent;
+  }
 }

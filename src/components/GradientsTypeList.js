@@ -11,7 +11,7 @@ export default function GradientsTypeList( { types, onClick } ) {
       width='8rem' 
       height='8rem' 
       className='gradientMenu__preview' 
-      onClick={ () => _onClick( type ) } 
+      onClick={ _onClick } 
       type={ type }
     /> )
 }
