@@ -10,7 +10,7 @@ export default function AddColorButton( { onClick } ) {
       ref={_ref} 
       className='add-color-button'
       id='addColorButton'
-      onClick={ () => {onClick(_ref)} }
+      onClick={ () => {onClick(_ref, null, true)} }
     >
       <span className='add-color-button__icon'>+</span>
       <span className='add-color-button__text'>Add Color</span>

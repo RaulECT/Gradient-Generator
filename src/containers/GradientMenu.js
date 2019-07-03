@@ -13,6 +13,8 @@ export default function GradientMenu( { currentColors, onChangeColors, onChangeG
   const addColorButton = useRef( null )
   const [ isPickerShowing, handlePickerShowing ] = useState( false )
   const [ elementClicked, updateElementeClicked ] = useState( null )
+  const [ colorSelected, handleColorSelected ] = useState( null )
+  const [ isAddButtonPressed, handleIsAddButtonPress ] = useState( false )
   const pickerPos = usePosition( elementClicked )
 
   const _gradientsType = gradientsType || []
@@ -21,7 +23,9 @@ export default function GradientMenu( { currentColors, onChangeColors, onChangeG
       onAddNewColor={ AddColor }
       buttonRef={ addColorButton }
       position={ pickerPos }
-      add 
+      add={ isAddButtonPressed }
+      color={ currentColors[colorSelected] }
+      onChangeColor={ handleOnEditColor }
     /> ) : null
 
   function changeGradient( type, code ) {
@@ -30,13 +34,23 @@ export default function GradientMenu( { currentColors, onChangeColors, onChangeG
   }
 
   function AddColor(color) {
-    console.log(color)
-    onChangeColors( currentColors.concat( [ color.hex ] ) )
+    handleIsAddButtonPress( false )
+    handlePickerShowing( false )
+    onChangeColors( currentColors.concat( [ color ] ) )
   }
 
-  function handleOnAddColor( elementClicked ) {
+  function handleOnAddColor( elementClicked, colorSelected = null, isAddBtnPress = false ) {
+    handleIsAddButtonPress( isAddBtnPress )
     updateElementeClicked( elementClicked )
+    handleColorSelected( colorSelected )
     handlePickerShowing( !isPickerShowing )
+  }
+
+  function handleOnEditColor( newColor ) {
+    const colorsUpdated = [ ...currentColors ]
+    
+    colorsUpdated[ colorSelected ] = newColor.hex
+    onChangeColors( colorsUpdated )
   }
 
   return (
