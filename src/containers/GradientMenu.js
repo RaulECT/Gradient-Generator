@@ -53,6 +53,12 @@ export default function GradientMenu( { currentColors, onChangeColors, onChangeG
     onChangeColors( colorsUpdated )
   }
 
+  function deleteColor( colorSelected ) {
+    const colorsUpdated = currentColors.filter( color => color !== colorSelected )
+
+    onChangeColors( colorsUpdated )
+  }
+
   return (
     <div className="gradientMenu__panel">
       <p className="gradientMenu__title">Gradient Generator</p>
@@ -65,6 +71,7 @@ export default function GradientMenu( { currentColors, onChangeColors, onChangeG
           <CurrentColorsList 
             colors={ currentColors }
             onClick={ handleOnAddColor } 
+            onDelete={ deleteColor }
           />
 
           <AddColorButton 
