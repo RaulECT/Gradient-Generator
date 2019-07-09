@@ -10,6 +10,9 @@ import GradientsTypeList from '../components/GradientsTypeList'
 import ColorPicker from '../components/ColorPicker'
 
 export default function GradientMenu( { currentColors, onChangeColors, onChangeGradientType, gradientsType, gradientCode, onChangeGradientCode } ) {
+  /**
+   * MARK: Variables declaration
+   */
   const addColorButton = useRef( null )
   const [ isPickerShowing, handlePickerShowing ] = useState( false )
   const [ elementClicked, updateElementeClicked ] = useState( null )
@@ -27,7 +30,11 @@ export default function GradientMenu( { currentColors, onChangeColors, onChangeG
       color={ currentColors[colorSelected] }
       onChangeColor={ handleOnEditColor }
     /> ) : null
-
+  
+  /**
+   * MARK: Local functions declarations
+   */
+  
   function changeGradient( type, code ) {
     onChangeGradientCode( code )
     onChangeGradientType( type )
@@ -59,6 +66,9 @@ export default function GradientMenu( { currentColors, onChangeColors, onChangeG
     onChangeColors( colorsUpdated )
   }
 
+  /**
+   * MARK: JSX component
+   */
   return (
     <div className="gradientMenu__panel">
       <p className="gradientMenu__title">Gradient Generator</p>
