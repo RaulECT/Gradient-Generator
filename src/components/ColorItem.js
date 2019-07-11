@@ -17,7 +17,7 @@ export default function ColorItem( { color, onClick, onDelete } ) {
         ref={ colorPrevRef }
         style={previewStyle} 
         className="color-item__color-preview"
-        onClick={ () => { onClick( colorPrevRef ) } }
+        // onClick={ () => { onClick( colorPrevRef ) } }
       >
         <div 
           onClick={ handleDeleteIconPressed } 
