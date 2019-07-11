@@ -14,9 +14,17 @@ export default function CurrentColorList( { colors, onClick, onDelete } ) {
       animatedColorsItemRef.current.push( createRef() )
     }
   } )
-  // return colors.map( (color, index) => < ColorItem onDelete={ onDelete } onClick={ e => onClick( e, index ) } key={index} color={color} /> )
+
   return trail.map( ( props, index ) => {
-    const colorItem = < ColorItem onDelete={ onDelete } onClick={ e => onClick( e, index ) } key={'colorItem_'+index} color={colors[index]} />
+    const colorItem = (
+      <ColorItem 
+        onDelete={ onDelete } 
+        onClick={ e => onClick( e, index ) } 
+        key={'colorItem_'+index} 
+        color={colors[index]} 
+        buttonDelete={ colors.length > 2 }
+      />
+    )
 
     return (
       <animated.div

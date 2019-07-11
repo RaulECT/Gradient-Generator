@@ -3,7 +3,7 @@ import DeleteButton from './DeleteButton'
 
 import './ColorItem.css'
 
-export default function ColorItem( { color, onClick, onDelete } ) {
+export default function ColorItem( { color, onClick, onDelete, buttonDelete } ) {
   const previewStyle = { backgroundColor: `${color}` }
   const colorPrevRef = useRef( null )
 
@@ -20,7 +20,10 @@ export default function ColorItem( { color, onClick, onDelete } ) {
         className="color-item__color-preview"
         // onClick={ () => { onClick( colorPrevRef ) } }
       >
-        <DeleteButton onDelete={ handleDeleteIconPressed } />
+        <DeleteButton 
+          onDelete={ handleDeleteIconPressed } 
+          render={ buttonDelete }
+        />
       </div>
 
       <div className='color-item__hex-color'>

@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function DeleteButton( { onDelete } ) {
-  return (
+export default function DeleteButton( { onDelete, render } ) {
+  const button = (
     <div 
       onClick={ onDelete } 
       className='color-item__delete-buton'
@@ -9,4 +9,6 @@ export default function DeleteButton( { onDelete } ) {
       <span className='color-item__delete-icon' />
     </div>
   )
+
+  return render ? button : null
 }
