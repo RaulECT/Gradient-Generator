@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import DeleteButton from './DeleteButton'
 
 import './ColorItem.css'
 
@@ -19,12 +20,7 @@ export default function ColorItem( { color, onClick, onDelete } ) {
         className="color-item__color-preview"
         // onClick={ () => { onClick( colorPrevRef ) } }
       >
-        <div 
-          onClick={ handleDeleteIconPressed } 
-          className='color-item__delete-buton'
-        >
-          <span className='color-item__delete-icon' />
-        </div>
+        <DeleteButton onDelete={ handleDeleteIconPressed } />
       </div>
 
       <div className='color-item__hex-color'>
